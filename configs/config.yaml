@@ -1,1 +1,27 @@
+model:
+  name: "bert-base-uncased"
+  num_labels: 2
+
+training:
+  batch_size: 8
+  epochs: 3
+  learning_rate: 2e-5
+  lora_high_r: 16  # High-rank LoRA for high-SNR layers
+  lora_mid_r: 4    # Low-rank LoRA for mid-SNR layers
+  lora_alpha_high: 32
+  lora_alpha_mid: 16
+  lora_dropout: 0.05
+
+spectrum:
+  snr_threshold_low: 0.2  # Mid-SNR layers selection
+  snr_threshold_high: 0.7 # High-SNR layers selection
+
+dataset:
+  name: "imdb"
+  train_size: 1000
+  test_size: 1000
+
+output:
+  dir: "./output"
+  save_model: "alors_finetuned.pth"
 
