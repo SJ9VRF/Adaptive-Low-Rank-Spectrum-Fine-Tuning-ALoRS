@@ -31,7 +31,7 @@ source env/bin/activate  # On Mac/Linux
 env\Scripts\activate  # On Windows
 ```
 
-⚡ How to Use
+## ⚡ How to Use
 
 1️⃣ Fine-Tune a Model  
 Run the finetune.py script to train a model using Adaptive LoRA + Spectrum:
@@ -47,7 +47,7 @@ Modify config.yaml to change:
 - Training parameters (epochs, learning rate, dataset size)
 
 
-🔬 Methodology
+## 🔬 Methodology
 
 1️⃣ Adaptive SNR-Based Layer Selection  
 - High-SNR layers → Get higher-rank LoRA adapters for full expressivity.
@@ -62,7 +62,7 @@ Modify config.yaml to change:
 python src/finetune.py
 ```
 
-📊 Evaluation
+### 📊 Evaluation
 
 To evaluate the fine-tuned model:
 ```bash
@@ -71,13 +71,13 @@ python src/evaluate.py
 
 This script calculates accuracy & loss metrics on a test dataset.
 
-💾 Saving & Inference
+### 💾 Saving & Inference
 After training, the fine-tuned model is saved as:
 ```bash
 output/alors_finetuned.pth
 ```
 
-🛠 Customization & Extensions
+## 🛠 Customization & Extensions
 
 - ✅ Switch Model Architectures – Modify finetune.py to use GPT, LLaMA, T5, etc.
 - ✅ Extend to Multi-GPU – Modify alors_trainer.py to include distributed training.
